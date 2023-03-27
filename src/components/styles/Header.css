@@ -1,6 +1,4 @@
 .Header {
-  width: 950px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
