@@ -1,0 +1,26 @@
+.Header {
+  width: 950px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header-title {
+  font-family: 'GraphikBold';
+}
+
+.Header-list {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  text-transform: uppercase;
+  color: #d8e0e8;
+}
+
+.Header-search {
+  padding: 6px 30px 6px 10px;
+  background-color: #2c3440;
+  border: none;
+  border-radius: 50px;
+}
