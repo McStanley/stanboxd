@@ -1,6 +1,35 @@
+import { useEffect, useState } from 'react';
 import './styles/Home.css';
 
 function Home() {
+  const [trendingData, setTrendingData] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const gatewayURL = '/api/gateway';
+      const apiURL = 'https://api.themoviedb.org/3/trending/movie/week';
+      const fetchURL = `${gatewayURL}?url=${encodeURIComponent(apiURL)}`;
+
+      const response = await fetch(fetchURL);
+      const data = await response.json();
+
+      console.log(data);
+      const trendingMovies = data.results.slice(0, 5);
+
+      console.log(trendingMovies);
+      setTrendingData(trendingMovies);
+    })();
+  }, []);
+
+  const trendingMovies = trendingData.map((entry) => (
+    <article className="Home-trendingMovie" key={entry.id}>
+      <img
+        src={`https://image.tmdb.org/t/p/w154/${entry.poster_path}`}
+        alt={entry.title}
+      />
+    </article>
+  ));
+
   return (
     <main className="Home">
       <h2 className="Home-heading">
@@ -13,6 +42,7 @@ function Home() {
       <p className="Home-subheading">
         The social network for film lovers. Also available on 🍏 🤖
       </p>
+      <div className="Home-trendingList">{trendingMovies}</div>
     </main>
   );
 }
