@@ -1,0 +1,12 @@
+.Background {
+  display: flex;
+  position: absolute;
+  top: 0;
+  z-index: -100;
+  box-shadow: 0px -50px 100px 100px #14181c inset;
+}
+
+.Background-image {
+  visibility: hidden;
+  width: 1200px;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Background from '../components/Background';
 import './styles/Home.css';
 
 function Home() {
@@ -32,6 +33,7 @@ function Home() {
 
   return (
     <main className="Home">
+      {trendingData[0] && <Background path={trendingData[0].backdrop_path} />}
       <h2 className="Home-heading">
         Track films you’ve watched. <br /> Save those you want to see. <br />
         Tell your friends what’s good.
