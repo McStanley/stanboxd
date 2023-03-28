@@ -38,3 +38,13 @@ body {
   min-height: 100vh;
   background: #14181c;
 }
+
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}

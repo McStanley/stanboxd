@@ -1,7 +1,5 @@
 .App {
   min-height: 100vh;
-  margin: auto;
-  width: 950px;
   color: whitesmoke;
   display: flex;
   flex-direction: column;

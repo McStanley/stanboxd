@@ -1,4 +1,6 @@
 .Home {
+  width: 950px;
+  margin: 0 auto;
   flex: 1;
   padding-top: 350px;
   padding-bottom: 40px;

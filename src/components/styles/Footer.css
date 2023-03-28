@@ -1,0 +1,62 @@
+.Footer {
+  padding: 32px 0 40px;
+  background-color: #2c3440;
+}
+
+.Footer-content {
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Footer-nav {
+  color: #9ab;
+  font-family: 'GraphikSemiBold';
+  font-size: 0.9rem;
+}
+
+.Footer-nav > ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.Footer-nav li {
+  cursor: not-allowed;
+}
+
+.Footer-nav li:hover {
+  color: #bce;
+}
+
+.Footer-githubLogo {
+  display: block;
+  height: 28px;
+  /* color: #567 */
+  filter: invert(40%) sepia(13%) saturate(698%) hue-rotate(169deg)
+    brightness(92%) contrast(90%);
+}
+
+.Footer-githubLogo:hover {
+  /* color: #89a */
+  filter: invert(64%) sepia(10%) saturate(565%) hue-rotate(169deg)
+    brightness(92%) contrast(91%);
+}
+
+.Footer-bottom {
+  color: #678;
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+}
+
+.Footer-bottom a:hover {
+  color: #9ab;
+}
