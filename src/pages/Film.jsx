@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Background from '../components/Background';
+import Poster from '../components/Poster';
 import './styles/Film.css';
 
 function Film() {
@@ -37,10 +38,10 @@ function Film() {
     <div className="Film">
       <Background path={filmData.backdrop_path} />
       <aside className="Film-aside">
-        <img
-          className="Film-poster"
-          src={`https://image.tmdb.org/t/p/w342/${filmData.poster_path}`}
-          alt={filmData.title}
+        <Poster
+          path={filmData.poster_path}
+          size="w342"
+          altText={filmData.title}
         />
       </aside>
       <main className="Film-main">

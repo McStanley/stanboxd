@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Background from '../components/Background';
+import Poster from '../components/Poster';
 import './styles/Home.css';
 
 function Home() {
@@ -15,7 +16,7 @@ function Home() {
       const data = await response.json();
 
       console.log(data);
-      const trendingMovies = data.results.slice(0, 5);
+      const trendingMovies = data.results.slice(0, 6);
 
       console.log(trendingMovies);
       setTrendingData(trendingMovies);
@@ -23,12 +24,13 @@ function Home() {
   }, []);
 
   const trendingMovies = trendingData.map((entry) => (
-    <article className="Home-trendingMovie" key={entry.id}>
-      <img
-        src={`https://image.tmdb.org/t/p/w154/${entry.poster_path}`}
-        alt={entry.title}
-      />
-    </article>
+    <Poster
+      id={entry.id}
+      path={entry.poster_path}
+      size="w185"
+      altText={entry.title}
+      key={entry.id}
+    />
   ));
 
   return (

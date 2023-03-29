@@ -1,0 +1,17 @@
+.Poster {
+  display: flex;
+  border: 1px solid rgba(245, 245, 245, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 100ms;
+}
+
+.Poster > img {
+  width: 100%;
+  z-index: -10;
+}
+
+.Poster--clickable:hover {
+  border: 1px solid #00e054;
+  box-shadow: inset 0px 0px 0px 2px #00e054;
+}
