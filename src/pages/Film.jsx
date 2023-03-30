@@ -30,8 +30,8 @@ function Film() {
     (entry) => entry.job === 'Director'
   );
 
-  const voteAverage = Math.round(
-    ((filmData.vote_average / 2) * 10) / 10
+  const voteAverage = (
+    Math.round((filmData.vote_average / 2) * 10) / 10
   ).toFixed(1);
 
   return (
