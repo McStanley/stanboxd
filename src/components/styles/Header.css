@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.Header a {
+  text-decoration: none;
+}
+
 .Header-title {
   font-family: 'GraphikBold';
 }

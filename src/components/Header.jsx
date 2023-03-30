@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
 import './styles/Header.css';
 
 function Header() {
   return (
     <header className="Header">
-      <h1 className="Header-title">Stanboxd</h1>
+      <Link to="/">
+        <h1 className="Header-title">Stanboxd</h1>
+      </Link>
       <ul className="Header-list">
         <li>Sign in</li>
         <li>Create account</li>
