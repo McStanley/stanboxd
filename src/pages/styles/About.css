@@ -1,0 +1,41 @@
+.About {
+  padding-top: 56px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+  flex: 1;
+  color: #000000;
+}
+
+.About-content {
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+}
+
+.About-nav {
+  flex-shrink: 0;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  color: #567;
+  font-size: 1.1rem;
+}
+
+.About-nav > a {
+  text-decoration: none;
+}
+
+.About-navItem {
+  height: 30px;
+  font-family: 'GraphikRegular';
+  border-right: 1px solid #55667770;
+}
+
+.About-navItem.active {
+  border-right-color: #556677;
+}
+
+.About-navItem:hover {
+  color: #209ce4;
+}

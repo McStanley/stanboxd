@@ -19,6 +19,11 @@
 }
 
 @font-face {
+  font-family: 'PlayfairDisplayRegular';
+  src: url(./fonts/PlayfairDisplayRegular.woff) format('woff');
+}
+
+@font-face {
   font-family: 'PlayfairDisplayMedium';
   src: url(./fonts/PlayfairDisplayMedium.woff) format('woff');
 }

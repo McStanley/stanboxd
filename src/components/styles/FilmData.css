@@ -1,0 +1,24 @@
+.FilmData {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #567;
+}
+
+.FilmData-title {
+  font-size: 1.3rem;
+}
+
+.FilmData-text {
+  font-family: 'PlayfairDisplayMedium';
+  line-height: 1.5;
+}
+
+.FilmData-logo {
+  width: 150px;
+}
+
+.FilmData-notice {
+  font-family: 'PlayfairDisplayRegular';
+  font-style: italic;
+}

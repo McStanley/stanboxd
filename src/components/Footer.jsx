@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import GithubLogo from '../assets/github.svg';
 import './styles/Footer.css';
 
@@ -38,7 +39,7 @@ function Footer() {
           >
             Stanisław Olejniczak
           </a>
-          . Film data from{' '}
+          . <Link to="/about/film-data">Film data</Link> from{' '}
           <a
             href="https://www.themoviedb.org/"
             target="_blank"
