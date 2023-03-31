@@ -1,0 +1,59 @@
+.Author {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #567;
+}
+
+.Author-title {
+  font-size: 1.3rem;
+}
+
+.Author-text {
+  font-family: 'PlayfairDisplayMedium';
+  line-height: 1.5;
+}
+
+.Author-card {
+  margin-top: 50px;
+  align-self: center;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.Author-photo {
+  width: 168px;
+  border: 6px solid #f0f2f4;
+  border-radius: 50%;
+}
+
+.Author-name {
+  font-family: 'PlayfairDisplayExtraBold';
+  font-size: 1.5rem;
+  color: #209ce4;
+}
+
+.Author-role {
+  font-family: 'GraphikSemibold';
+  font-size: 1.2rem;
+}
+
+.Author-bio {
+  margin-top: 5px;
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.Author-bio > a {
+  text-decoration: none;
+  font-style: italic;
+}
+
+.Author-bio > a:hover {
+  text-decoration: solid underline 1px #d0d8e0;
+}

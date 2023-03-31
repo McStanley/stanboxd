@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import FilmData from '../components/FilmData';
+import Author from '../components/Author';
 import './styles/About.css';
 
 function About() {
@@ -7,6 +8,7 @@ function About() {
 
   const pages = [
     { title: 'Film data', path: 'film-data', component: <FilmData /> },
+    { title: 'Author', path: 'author', component: <Author /> },
   ];
 
   const navElements = pages.map((entry) => {
