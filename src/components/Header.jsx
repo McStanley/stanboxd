@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SignIn from './SignIn';
 import './styles/Header.css';
 
-function Header() {
+function Header({ openSignUp }) {
   const [showSignIn, setShowSignIn] = useState(false);
   const location = useLocation();
 
@@ -28,7 +29,11 @@ function Header() {
                 Sign in
               </button>
             </li>
-            <li>Create account</li>
+            <li>
+              <button type="button" onClick={openSignUp}>
+                Create account
+              </button>
+            </li>
             <li>Films</li>
             <li>Members</li>
           </ul>
@@ -44,5 +49,9 @@ function Header() {
     </header>
   );
 }
+
+Header.propTypes = {
+  openSignUp: PropTypes.func.isRequired,
+};
 
 export default Header;

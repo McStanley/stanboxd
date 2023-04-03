@@ -1,0 +1,85 @@
+.SignUp {
+  width: 400px;
+  padding: 10px 20px 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 4px;
+  background-color: #456;
+  font-family: 'GraphikRegular';
+}
+
+.SignUp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SignUp-title {
+  color: #9ab;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.SignUp-close {
+  all: unset;
+  cursor: pointer;
+  color: #789;
+  font-size: 3rem;
+}
+
+.SignUp-close:hover {
+  color: #def;
+}
+
+.SignUp-inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.SignUp-inputContainer > label {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.SignUp-inputContainer > input {
+  width: 200px;
+  padding: 10px;
+  background-color: #cde;
+  border: none;
+  border-radius: 4px;
+  color: #567;
+}
+
+.SignUp-inputContainer > input.wide {
+  width: 350px;
+}
+
+.SignUp-inputContainer > input:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+.SignUp-submit {
+  align-self: start;
+  padding: 7px 14px;
+  background-color: #00b020;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 #ffffff4d;
+  font-family: 'GraphikSemiBold';
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  cursor: not-allowed;
+}
+
+.SignUp-submit:hover {
+  background-color: #00a11d;
+}
+
+.SignUp-submit:active {
+  background-color: #00971b;
+}

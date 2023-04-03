@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Background from '../components/Background';
 import Poster from '../components/Poster';
 import './styles/Home.css';
 
-function Home() {
+function Home({ openSignUp }) {
   const [trendingData, setTrendingData] = useState([]);
 
   useEffect(() => {
@@ -40,7 +41,7 @@ function Home() {
         Track films you’ve watched. <br /> Save those you want to see. <br />
         Tell your friends what’s good.
       </h2>
-      <button className="Home-getStarted" type="button">
+      <button className="Home-getStarted" type="button" onClick={openSignUp}>
         Get started — it‘s free!
       </button>
       <p className="Home-subheading">
@@ -50,5 +51,9 @@ function Home() {
     </main>
   );
 }
+
+Home.propTypes = {
+  openSignUp: PropTypes.func.isRequired,
+};
 
 export default Home;
