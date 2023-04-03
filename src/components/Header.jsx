@@ -1,19 +1,46 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import SignIn from './SignIn';
 import './styles/Header.css';
 
 function Header() {
+  const [showSignIn, setShowSignIn] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setShowSignIn(false);
+  }, [location.pathname]);
+
+  const toggleShowSignIn = () => {
+    setShowSignIn((prevShowSignIn) => !prevShowSignIn);
+  };
+
   return (
     <header className="Header">
       <Link to="/">
         <h1 className="Header-title">Stanboxd</h1>
       </Link>
-      <ul className="Header-list">
-        <li>Sign in</li>
-        <li>Create account</li>
-        <li>Films</li>
-        <li>Members</li>
-      </ul>
-      <input className="Header-search" type="text" name="search" id="search" />
+      {!showSignIn && (
+        <div className="Header-controls">
+          <ul className="Header-list">
+            <li>
+              <button type="button" onClick={toggleShowSignIn}>
+                Sign in
+              </button>
+            </li>
+            <li>Create account</li>
+            <li>Films</li>
+            <li>Members</li>
+          </ul>
+          <input
+            className="Header-search"
+            type="text"
+            name="search"
+            id="search"
+          />
+        </div>
+      )}
+      {showSignIn && <SignIn closePanel={toggleShowSignIn} />}
     </header>
   );
 }

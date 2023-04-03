@@ -14,6 +14,17 @@
   font-family: 'GraphikBold';
 }
 
+.Header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Header-controls button {
+  all: unset;
+  cursor: pointer;
+}
+
 .Header-list {
   display: flex;
   gap: 20px;
