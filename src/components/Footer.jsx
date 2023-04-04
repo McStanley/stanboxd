@@ -1,10 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import GithubLogo from '../assets/github.svg';
 import './styles/Footer.css';
 
 function Footer() {
+  const location = useLocation();
+
+  const isLight = location.pathname.startsWith('/about');
+
   return (
-    <footer className="Footer">
+    <footer className={`Footer ${isLight && 'light'}`}>
       <div className="Footer-content">
         <div className="Footer-top">
           <nav className="Footer-nav">

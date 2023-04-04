@@ -60,3 +60,33 @@
 .Footer-bottom a:hover {
   color: #9ab;
 }
+
+/* Light theme */
+
+.Footer.light {
+  background-color: #f0f2f4;
+}
+
+.Footer.light .Footer-nav li:hover {
+  color: #567;
+}
+
+.Footer.light .Footer-githubLogo {
+  /* color: #9ab */
+  filter: invert(73%) sepia(9%) saturate(553%) hue-rotate(169deg)
+    brightness(89%) contrast(95%);
+}
+
+.Footer.light .Footer-githubLogo:hover {
+  /* color: #567 */
+  filter: invert(40%) sepia(13%) saturate(698%) hue-rotate(169deg)
+    brightness(92%) contrast(90%);
+}
+
+.Footer.light .Footer-bottom {
+  color: #9ab;
+}
+
+.Footer.light .Footer-bottom a:hover {
+  color: #567;
+}
