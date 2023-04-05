@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Loading from '../components/Loading';
 import Background from '../components/Background';
 import Poster from '../components/Poster';
 import './styles/Film.css';
@@ -22,7 +23,7 @@ function Film() {
     })();
   }, []);
 
-  if (!filmData) return <div>Loading...</div>;
+  if (!filmData) return <Loading />;
 
   const releaseYear = new Date(filmData.release_date).getFullYear();
 

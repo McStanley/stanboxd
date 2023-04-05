@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Loading from '../components/Loading';
 import Background from '../components/Background';
 import Poster from '../components/Poster';
 import './styles/Home.css';
@@ -23,6 +24,8 @@ function Home({ openSignUp }) {
       setTrendingData(trendingMovies);
     })();
   }, []);
+
+  if (!trendingData.length) return <Loading />;
 
   const trendingMovies = trendingData.map((entry) => (
     <Poster
