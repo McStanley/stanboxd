@@ -5,7 +5,15 @@ import './styles/Poster.css';
 function Poster({ id, path, size, altText }) {
   const posterEl = (
     <article className={`Poster ${id && 'Poster--clickable'}`}>
-      <img src={`https://image.tmdb.org/t/p/${size}${path}`} alt={altText} />
+      {path ? (
+        <img
+          className="Poster-image"
+          src={`https://image.tmdb.org/t/p/${size}${path}`}
+          alt={altText}
+        />
+      ) : (
+        <div className="Poster-placeholder" />
+      )}
     </article>
   );
 
@@ -14,13 +22,14 @@ function Poster({ id, path, size, altText }) {
 
 Poster.propTypes = {
   id: PropTypes.number,
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
   size: PropTypes.string,
   altText: PropTypes.string,
 };
 
 Poster.defaultProps = {
   id: null,
+  path: null,
   size: 'original',
   altText: '',
 };
