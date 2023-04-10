@@ -52,9 +52,11 @@ function Film() {
             <Link to=".">
               <p>{releaseYear}</p>
             </Link>
-            <p>
-              Directed by <Link to=".">{director.name}</Link>
-            </p>
+            {director && (
+              <p>
+                Directed by <Link to=".">{director.name}</Link>
+              </p>
+            )}
           </div>
         </section>
         <section className="Film-info">
