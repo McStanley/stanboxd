@@ -37,9 +37,13 @@ function Film() {
     Math.round((filmData.vote_average / 2) * 10) / 10
   ).toFixed(1);
 
+  const styles = {
+    paddingTop: filmData.backdrop_path ? 380 : 20,
+  };
+
   return (
-    <div className="Film">
-      <Background path={filmData.backdrop_path} />
+    <div className="Film" style={styles}>
+      {filmData.backdrop_path && <Background path={filmData.backdrop_path} />}
       <aside className="Film-aside">
         <Poster
           path={filmData.poster_path}
