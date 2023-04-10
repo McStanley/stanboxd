@@ -25,7 +25,9 @@ function Film() {
 
   if (!filmData) return <Loading />;
 
-  const releaseYear = new Date(filmData.release_date).getFullYear();
+  const releaseYear = filmData.release_date
+    ? new Date(filmData.release_date).getFullYear()
+    : null;
 
   const director = filmData.credits.crew.find(
     (entry) => entry.job === 'Director'
