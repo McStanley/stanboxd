@@ -95,6 +95,8 @@
   border: none;
   color: #bcd;
   font-family: 'GraphikRegular';
+  font-size: 0.85rem;
+  text-align: center;
   cursor: not-allowed;
 }
 

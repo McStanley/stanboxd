@@ -10,8 +10,6 @@
 }
 
 .SignIn-close {
-  all: unset;
-  cursor: pointer;
   font-size: 1.5rem;
   color: #345;
 }
@@ -75,6 +73,7 @@
   border: none;
   border-radius: 3px;
   font-family: 'GraphikSemiBold';
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: not-allowed;
