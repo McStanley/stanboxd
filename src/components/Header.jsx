@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import SearchBar from './SearchBar';
 import SignIn from './SignIn';
 import './styles/Header.css';
 
@@ -37,12 +38,7 @@ function Header({ openSignUp }) {
             <li>Films</li>
             <li>Members</li>
           </ul>
-          <input
-            className="Header-search"
-            type="text"
-            name="search"
-            id="search"
-          />
+          <SearchBar />
         </div>
       )}
       {showSignIn && <SignIn closePanel={toggleShowSignIn} />}

@@ -66,5 +66,6 @@ a {
 }
 
 button {
-  font-family: inherit;
+  all: unset;
+  cursor: pointer;
 }

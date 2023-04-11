@@ -1,0 +1,51 @@
+.SearchBar {
+  width: 140px;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: hsl(0deg 0% 100% / 25%);
+  display: flex;
+  transition: background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.Header:hover .SearchBar {
+  background-color: hsl(0deg 0% 100% / 80%);
+}
+
+.SearchBar:focus-within,
+.Header:hover .SearchBar:focus-within {
+  background-color: #fff;
+}
+
+.SearchBar-input {
+  width: 100%;
+  padding: 8px 30px 8px 10px;
+  border: none;
+  outline: none;
+  font-family: 'GraphikRegular';
+  background-color: transparent;
+  color: #89a;
+}
+
+.SearchBar-submit {
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.SearchBar-icon {
+  width: 14px;
+  /* color: #d8e0e8 */
+  filter: invert(96%) sepia(2%) saturate(1116%) hue-rotate(180deg)
+    brightness(96%) contrast(90%);
+}
+
+.Header:hover .SearchBar-icon,
+.SearchBar:focus-within .SearchBar-icon {
+  /* color: #789; */
+  filter: invert(52%) sepia(5%) saturate(1211%) hue-rotate(169deg)
+    brightness(99%) contrast(92%);
+}
