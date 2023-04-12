@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Search from './pages/Search';
 import Film from './pages/Film';
 import About from './pages/About';
 import Footer from './components/Footer';
@@ -21,6 +22,7 @@ function App() {
       <Header openSignUp={toggleShowSignUp} />
       <Routes>
         <Route path="/" element={<Home openSignUp={toggleShowSignUp} />} />
+        <Route path="/search/:category/:query?" element={<Search />} />
         <Route path="/film/:id" element={<Film />} />
         <Route path="/about/:path" element={<About />} />
       </Routes>
