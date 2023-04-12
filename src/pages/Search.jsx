@@ -24,7 +24,7 @@ function Search() {
     const isActive = entry.path === category;
 
     return (
-      <Link to={`/search/${entry.path}/${query}`}>
+      <Link to={`/search/${entry.path}/${query}`} key={entry.path}>
         <div className={`Search-navItem ${isActive && 'active'}`}>
           {entry.name}
         </div>
