@@ -1,0 +1,58 @@
+.FilmEntry {
+  padding: 20px 0;
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.FilmEntry:first-of-type {
+  padding-top: 5px;
+}
+
+.FilmEntry a {
+  text-decoration: none;
+}
+
+.FilmEntry:not(.FilmEntry:last-child) {
+  border-bottom: 1px solid #2c3440;
+}
+
+.FilmEntry-posterContainer {
+  width: 70px;
+}
+
+.FilmEntry-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.FilmEntry-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.FilmEntry-title {
+  font-family: 'PlayfairDisplayBlack';
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.FilmEntry-title:hover {
+  color: #40bcf4;
+}
+
+.FilmEntry-releaseYear {
+  color: #89a;
+  font-family: 'GraphikRegular';
+  font-size: 1.15rem;
+}
+
+.FilmEntry-originalTitle {
+  color: #9ab;
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+}
