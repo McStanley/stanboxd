@@ -37,16 +37,12 @@ function Search() {
     (async () => {
       setResults(null);
 
-      if (query) {
-        await (async () => {
-          const activeCategory = categories.find(
-            (entry) => entry.path === category
-          );
+      const activeCategory = categories.find(
+        (entry) => entry.path === category
+      );
 
-          const data = await activeCategory.func(query, signal);
-          setResults(data);
-        })();
-      }
+      const data = await activeCategory.func(query, signal);
+      setResults(data);
 
       setIsLoading(false);
     })();
