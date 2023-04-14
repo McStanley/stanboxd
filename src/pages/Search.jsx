@@ -25,7 +25,7 @@ function Search() {
     const validPaths = categories.map((entry) => entry.path);
 
     if (!validPaths.includes(category)) {
-      const redirectPath = `/search/films/${query}`;
+      const redirectPath = `/search/films/${encodeURIComponent(query)}`;
       navigate(redirectPath);
     }
   }, [category]);
@@ -54,7 +54,10 @@ function Search() {
     const isActive = entry.path === category;
 
     return (
-      <Link to={`/search/${entry.path}/${query}`} key={entry.path}>
+      <Link
+        to={`/search/${entry.path}/${encodeURIComponent(query)}`}
+        key={entry.path}
+      >
         <div className={`Search-navItem ${isActive && 'active'}`}>
           {entry.name}
         </div>
