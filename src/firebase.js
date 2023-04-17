@@ -1,6 +1,14 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import {
+  collection,
+  doc,
+  getDocs,
+  getFirestore,
+  query,
+  setDoc,
+  where,
+} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAZpXygv3EAu2SVjYV45W_LhHr5rwpDzDA',
@@ -14,3 +22,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+const register = async (username, email, password) => {
+  const { user } = await createUserWithEmailAndPassword(auth, email, password);
+
+  await setDoc(doc(db, 'users', user.uid), {
+    username,
+  });
+};
+
+const isUsernameAvailable = async (username) => {
+  const usersRef = collection(db, 'users');
+  const q = query(usersRef, where('username', '==', username));
+
+  const querySnapshot = await getDocs(q);
+
+  return !querySnapshot.size;
+};
+
+export { isUsernameAvailable, register };
