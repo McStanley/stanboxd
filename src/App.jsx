@@ -38,7 +38,6 @@ function App() {
         reverseOrder
         containerStyle={{ inset: '6px' }}
         toastOptions={{
-          duration: 20000,
           style: {
             boxSizing: 'border-box',
             maxWidth: 'unset',
@@ -51,7 +50,15 @@ function App() {
             fontSize: '0.9rem',
             lineHeight: 1.2,
           },
+          success: {
+            duration: 5000,
+            style: {
+              backgroundColor: '#00c030',
+              color: '#fff',
+            },
+          },
           error: {
+            duration: 20000,
             style: {
               backgroundColor: '#ee7000',
               color: '#fff',

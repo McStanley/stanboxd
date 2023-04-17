@@ -1,5 +1,9 @@
 import { initializeApp } from 'firebase/app';
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 import {
   collection,
   doc,
@@ -31,6 +35,10 @@ const register = async (username, email, password) => {
   });
 };
 
+const login = async (email, password) => {
+  await signInWithEmailAndPassword(auth, email, password);
+};
+
 const isUsernameAvailable = async (username) => {
   const usersRef = collection(db, 'users');
   const q = query(usersRef, where('username', '==', username));
@@ -40,4 +48,4 @@ const isUsernameAvailable = async (username) => {
   return !querySnapshot.size;
 };
 
-export { isUsernameAvailable, register };
+export { isUsernameAvailable, login, register };

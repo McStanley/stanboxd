@@ -1,4 +1,5 @@
 .Header {
+  z-index: 1000;
   width: 950px;
   margin: 0 auto;
   display: flex;

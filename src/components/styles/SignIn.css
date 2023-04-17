@@ -1,4 +1,5 @@
 .SignIn {
+  position: relative;
   align-self: stretch;
   padding: 0 20px 15px;
   border-bottom-left-radius: 5px;
@@ -7,6 +8,11 @@
   display: flex;
   align-items: end;
   gap: 10px;
+}
+
+.SignIn--error {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .SignIn-close {
@@ -76,7 +82,6 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  cursor: not-allowed;
 }
 
 .SignIn-button:hover {
@@ -87,4 +92,34 @@
 .SignIn-button:active {
   background-color: #00971b;
   color: #e3eae0;
+}
+
+.SignIn-button--disabled {
+  background-color: #20262e;
+  color: #345;
+  pointer-events: none;
+}
+
+.SignIn-error {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0 10px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  display: flex;
+  justify-content: center;
+  background-color: #ee7000;
+  color: #fff;
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+  animation: showError 300ms ease-out 0s 1 forwards normal;
+}
+
+@keyframes showError {
+  to {
+    transform: translateY(35px);
+  }
 }
