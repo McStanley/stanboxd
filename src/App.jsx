@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ToastBar, Toaster, toast } from 'react-hot-toast';
+import { UserProvider } from './contexts/UserContext';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Search from './pages/Search';
@@ -20,19 +21,21 @@ function App() {
 
   return (
     <div className="App">
-      <Header openSignUp={toggleShowSignUp} />
-      <Routes>
-        <Route path="/" element={<Home openSignUp={toggleShowSignUp} />} />
-        <Route path="/search/:category/:query?" element={<Search />} />
-        <Route path="/film/:id" element={<Film />} />
-        <Route path="/about/:path" element={<About />} />
-      </Routes>
-      <Footer />
-      {showSignUp && (
-        <Overlay>
-          <SignUp closePanel={toggleShowSignUp} />
-        </Overlay>
-      )}
+      <UserProvider>
+        <Header openSignUp={toggleShowSignUp} />
+        <Routes>
+          <Route path="/" element={<Home openSignUp={toggleShowSignUp} />} />
+          <Route path="/search/:category/:query?" element={<Search />} />
+          <Route path="/film/:id" element={<Film />} />
+          <Route path="/about/:path" element={<About />} />
+        </Routes>
+        <Footer />
+        {showSignUp && (
+          <Overlay>
+            <SignUp closePanel={toggleShowSignUp} />
+          </Overlay>
+        )}
+      </UserProvider>
       <Toaster
         position="top-left"
         reverseOrder

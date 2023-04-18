@@ -48,4 +48,4 @@ const isUsernameAvailable = async (username) => {
   return !querySnapshot.size;
 };
 
-export { isUsernameAvailable, login, register };
+export { auth, db, isUsernameAvailable, login, register };
