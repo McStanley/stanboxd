@@ -10,20 +10,21 @@ const UserContext = createContext(null);
 export const useUserContext = () => useContext(UserContext);
 
 export function UserProvider({ children }) {
-  const [user] = useAuthState(auth);
+  const [user, userLoading] = useAuthState(auth);
   const docRef = user ? doc(db, 'users', user.uid) : null;
-  const [userData] = useDocumentData(docRef);
+  const [userData, userDataLoading] = useDocumentData(docRef);
 
-  const value = useMemo(() => {
-    if (!user || !userData) {
-      return null;
-    }
+  const data =
+    !user || !userData
+      ? null
+      : {
+          uid: user.uid,
+          username: userData.username,
+        };
 
-    return {
-      uid: user.uid,
-      username: userData.username,
-    };
-  }, [user, userData]);
+  const loading = userLoading || userDataLoading;
+
+  const value = useMemo(() => [data, loading], [data, loading]);
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
