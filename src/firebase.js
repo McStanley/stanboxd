@@ -3,6 +3,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
+  signOut,
 } from 'firebase/auth';
 import {
   collection,
@@ -39,6 +40,10 @@ const login = async (email, password) => {
   await signInWithEmailAndPassword(auth, email, password);
 };
 
+const logout = async () => {
+  await signOut(auth);
+};
+
 const isUsernameAvailable = async (username) => {
   const usersRef = collection(db, 'users');
   const q = query(usersRef, where('username', '==', username));
@@ -48,4 +53,4 @@ const isUsernameAvailable = async (username) => {
   return !querySnapshot.size;
 };
 
-export { auth, db, isUsernameAvailable, login, register };
+export { auth, db, isUsernameAvailable, login, logout, register };
