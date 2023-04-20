@@ -15,6 +15,17 @@
   text-align: center;
 }
 
+.Home-welcome {
+  margin-top: 40px;
+  font-family: 'GraphikRegular';
+  font-size: 1.5rem;
+  color: #abc;
+}
+
+.Home-welcomeName {
+  color: #fff;
+}
+
 .Home-getStarted {
   margin-top: 40px;
   padding: 10px 24px;

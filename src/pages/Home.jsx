@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useUserContext } from '../contexts/UserContext';
 import Loading from '../components/Loading';
 import Background from '../components/Background';
 import Poster from '../components/Poster';
@@ -7,6 +8,7 @@ import './styles/Home.css';
 
 function Home({ openSignUp }) {
   const [trendingData, setTrendingData] = useState([]);
+  const [userData, userLoading] = useUserContext();
 
   useEffect(() => {
     (async () => {
@@ -44,9 +46,19 @@ function Home({ openSignUp }) {
         Track films you’ve watched. <br /> Save those you want to see. <br />
         Tell your friends what’s good.
       </h2>
-      <button className="Home-getStarted" type="button" onClick={openSignUp}>
-        Get started — it‘s free!
-      </button>
+      {userLoading && <p className="Home-welcome">Loading user data...</p>}
+      {!userLoading && !userData && (
+        <button className="Home-getStarted" type="button" onClick={openSignUp}>
+          Get started — it‘s free!
+        </button>
+      )}
+      {!userLoading && userData && (
+        <p className="Home-welcome">
+          Welcome back,{' '}
+          <span className="Home-welcomeName">{userData.username}</span>. What
+          have you been watching?
+        </p>
+      )}
       <p className="Home-subheading">
         The social network for film lovers. Also available on 🍏 🤖
       </p>
