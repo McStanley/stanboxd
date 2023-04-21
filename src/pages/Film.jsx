@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import Background from '../components/Background';
 import Poster from '../components/Poster';
+import FilmActions from '../components/FilmActions';
 import './styles/Film.css';
 
 function Film() {
@@ -71,14 +72,7 @@ function Film() {
             <p className="Film-overview">{filmData.overview}</p>
           </div>
           <div className="Film-sidebar">
-            <section className="Film-actions">
-              <button className="Film-rate" type="button">
-                Sign in to log, rate or review
-              </button>
-              <button className="Film-share" type="button">
-                Share
-              </button>
-            </section>
+            <FilmActions />
             <section className="Film-rating">
               <div className="Film-ratingHeader">
                 <p>Ratings</p>
