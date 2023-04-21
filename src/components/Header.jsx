@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import PropTypes from 'prop-types';
 import { logout } from '../firebase';
@@ -9,18 +8,8 @@ import SignIn from './SignIn';
 import Dropdown from '../assets/dropdown.svg';
 import './styles/Header.css';
 
-function Header({ openSignUp }) {
-  const [showSignIn, setShowSignIn] = useState(false);
-  const location = useLocation();
+function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
   const [userData, userLoading] = useUserContext();
-
-  useEffect(() => {
-    setShowSignIn(false);
-  }, [location.pathname]);
-
-  const toggleShowSignIn = () => {
-    setShowSignIn((prevShowSignIn) => !prevShowSignIn);
-  };
 
   const handleSignOut = async () => {
     await logout();
@@ -93,6 +82,8 @@ function Header({ openSignUp }) {
 
 Header.propTypes = {
   openSignUp: PropTypes.func.isRequired,
+  showSignIn: PropTypes.bool.isRequired,
+  toggleShowSignIn: PropTypes.func.isRequired,
 };
 
 export default Header;

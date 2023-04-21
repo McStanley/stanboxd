@@ -27,7 +27,10 @@
   cursor: wait;
 }
 
-.FilmActions-signIn,
+.FilmActions-signIn:hover {
+  color: #fff;
+}
+
 .FilmActions-rate,
 .FilmActions-review,
 .FilmActions-share {

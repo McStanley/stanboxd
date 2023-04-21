@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { ToastBar, Toaster, toast } from 'react-hot-toast';
 import { UserProvider } from './contexts/UserContext';
 import Header from './components/Header';
@@ -14,19 +14,36 @@ import './App.css';
 
 function App() {
   const [showSignUp, setShowSignUp] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setShowSignIn(false);
+  }, [location.pathname]);
 
   const toggleShowSignUp = () => {
     setShowSignUp((prevShowSignUp) => !prevShowSignUp);
   };
 
+  const toggleShowSignIn = () => {
+    setShowSignIn((prevShowSignIn) => !prevShowSignIn);
+  };
+
   return (
     <div className="App">
       <UserProvider>
-        <Header openSignUp={toggleShowSignUp} />
+        <Header
+          openSignUp={toggleShowSignUp}
+          showSignIn={showSignIn}
+          toggleShowSignIn={toggleShowSignIn}
+        />
         <Routes>
           <Route path="/" element={<Home openSignUp={toggleShowSignUp} />} />
           <Route path="/search/:category/:query?" element={<Search />} />
-          <Route path="/film/:id" element={<Film />} />
+          <Route
+            path="/film/:id"
+            element={<Film openSignIn={toggleShowSignIn} />}
+          />
           <Route path="/about/:path" element={<About />} />
         </Routes>
         <Footer />

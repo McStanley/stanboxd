@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
 import Background from '../components/Background';
 import Poster from '../components/Poster';
 import FilmActions from '../components/FilmActions';
 import './styles/Film.css';
 
-function Film() {
+function Film({ openSignIn }) {
   const [filmData, setFilmData] = useState(null);
   const { id } = useParams();
 
@@ -72,7 +73,7 @@ function Film() {
             <p className="Film-overview">{filmData.overview}</p>
           </div>
           <div className="Film-sidebar">
-            <FilmActions />
+            <FilmActions openSignIn={openSignIn} />
             <section className="Film-rating">
               <div className="Film-ratingHeader">
                 <p>Ratings</p>
@@ -86,5 +87,9 @@ function Film() {
     </div>
   );
 }
+
+Film.propTypes = {
+  openSignIn: PropTypes.func.isRequired,
+};
 
 export default Film;
