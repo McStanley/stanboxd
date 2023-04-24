@@ -73,7 +73,7 @@ function Film({ openSignIn }) {
             <p className="Film-overview">{filmData.overview}</p>
           </div>
           <div className="Film-sidebar">
-            <FilmActions openSignIn={openSignIn} />
+            <FilmActions filmId={id} openSignIn={openSignIn} />
             <section className="Film-rating">
               <div className="Film-ratingHeader">
                 <p>Ratings</p>

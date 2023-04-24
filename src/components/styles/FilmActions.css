@@ -32,7 +32,6 @@
 }
 
 .FilmActions-rate,
-.FilmActions-review,
-.FilmActions-share {
+.FilmActions-review {
   cursor: not-allowed;
 }

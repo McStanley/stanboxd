@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { useUserContext } from '../contexts/UserContext';
+import Share from './Share';
 import './styles/FilmActions.css';
 
-function FilmActions({ openSignIn }) {
+function FilmActions({ filmId, openSignIn }) {
   const [userData, userLoading] = useUserContext();
 
   return (
@@ -27,12 +28,13 @@ function FilmActions({ openSignIn }) {
           </button>
         </>
       )}
-      <div className="FilmActions-share">Share</div>
+      <Share url={`https://stanboxd.vercel.app/film/${filmId}`} />
     </section>
   );
 }
 
 FilmActions.propTypes = {
+  filmId: PropTypes.string.isRequired,
   openSignIn: PropTypes.func.isRequired,
 };
 
