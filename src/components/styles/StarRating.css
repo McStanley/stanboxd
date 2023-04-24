@@ -1,0 +1,16 @@
+.StarRating {
+  position: relative;
+}
+
+.StarRating-delete {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  padding: 0 5px;
+  font-size: 1.5rem;
+}
+
+.StarRating:hover .StarRating-delete {
+  display: flex;
+}
