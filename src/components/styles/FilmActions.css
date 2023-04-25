@@ -31,7 +31,13 @@
   color: #fff;
 }
 
-.FilmActions-rate,
+.FilmActions-rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 .FilmActions-review {
   cursor: not-allowed;
 }
