@@ -32,9 +32,16 @@ function ReviewForm({
   const [rating, setRating] = useState(reviewRating);
   const [expandTextarea, setExpandTextArea] = useState(false);
   const [showDelete] = useState(!!reviewRef);
-  const toastId = useRef(null);
+  const emptyReviewToastId = useRef(null);
 
-  useEffect(() => () => toast.dismiss(toastId.current), [text, rating]);
+  useEffect(
+    () => () => {
+      if (emptyReviewToastId.current) {
+        toast.dismiss(emptyReviewToastId.current);
+      }
+    },
+    [text, rating]
+  );
 
   const deleteReview = async () => {
     if (reviewRef) {
@@ -81,7 +88,7 @@ function ReviewForm({
     e.preventDefault();
 
     if (!rating && !text) {
-      toastId.current = toast.error('Review cannot be empty.', {
+      emptyReviewToastId.current = toast.error('Review cannot be empty.', {
         id: 'emptyReview',
       });
 
