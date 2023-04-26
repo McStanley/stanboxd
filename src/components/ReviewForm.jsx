@@ -67,6 +67,8 @@ function ReviewForm({
       if (!updatedDoc.get('rating') && !updatedDoc.get('text')) {
         await deleteDoc(reviewRef);
       }
+
+      toast.success('Review has been successfully updated.');
     } else {
       await addDoc(reviewsRef, {
         user_id: uid,
@@ -75,6 +77,8 @@ function ReviewForm({
         ...(text && { text }),
         createdAt: serverTimestamp(),
       });
+
+      toast.success('Review has been successfully added.');
     }
   };
 
