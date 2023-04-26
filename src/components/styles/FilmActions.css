@@ -27,7 +27,7 @@
   cursor: wait;
 }
 
-.FilmActions-signIn:hover {
+.FilmActions > button:hover {
   color: #fff;
 }
 
@@ -36,8 +36,4 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-}
-
-.FilmActions-review {
-  cursor: not-allowed;
 }

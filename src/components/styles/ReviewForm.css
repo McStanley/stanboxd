@@ -1,0 +1,145 @@
+.ReviewForm {
+  position: relative;
+  box-sizing: border-box;
+  width: 800px;
+  padding: 30px 60px 30px 40px;
+  background-color: #456;
+  display: flex;
+  gap: 50px;
+  animation: fadeIn 150ms ease-in 0s 1 normal forwards;
+}
+
+.ReviewForm-posterContainer {
+  position: relative;
+  z-index: 10;
+  width: 150px;
+}
+
+.ReviewForm-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+.ReviewForm-header {
+  font-size: 1.05rem;
+  color: #9ab;
+  text-transform: uppercase;
+}
+
+.ReviewForm-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #9ab;
+  transition: color 100ms ease-in 0s;
+}
+
+.ReviewForm-close:hover {
+  color: #def;
+}
+
+.ReviewForm-filmInfo {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.ReviewForm-filmTitle {
+  font-family: 'PlayfairDisplayExtraBold';
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.ReviewForm-filmRelease {
+  font-family: 'GraphikRegular';
+  font-size: 1.1rem;
+}
+
+.ReviewForm-textarea {
+  align-self: stretch;
+  padding: 8px;
+  border-radius: 4px;
+  outline: none;
+  background-color: #cde;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #567;
+  transition: height 500ms ease-in-out;
+  resize: none;
+}
+
+.ReviewForm-textarea:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+.ReviewForm-ratingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ReviewForm-ratingTop {
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.ReviewForm-ratingTitle {
+  color: #fff;
+}
+
+.ReviewForm-buttons {
+  align-self: end;
+  display: flex;
+  gap: 5px;
+}
+
+.ReviewForm-delete,
+.ReviewForm-submit {
+  padding: 8px 12px;
+  border-radius: 3px;
+  font-family: 'GraphikSemiBold';
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ReviewForm-delete {
+  background-color: #89a;
+}
+
+.ReviewForm-delete:hover {
+  background-color: #ec1200;
+}
+
+.ReviewForm-delete:active {
+  background-color: #c40f00;
+}
+
+.ReviewForm-submit {
+  background-color: #00b020;
+}
+
+.ReviewForm-submit:hover {
+  background-color: #00a11d;
+}
+
+.ReviewForm-submit:active {
+  background-color: #00971b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
