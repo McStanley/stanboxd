@@ -1,5 +1,6 @@
 .StarRating {
   position: relative;
+  line-height: 1;
 }
 
 .StarRating-delete {
@@ -8,7 +9,9 @@
   top: 50%;
   transform: translate(-100%, -50%);
   padding: 0 5px;
+  font-family: 'GraphikRegular';
   font-size: 1.5rem;
+  color: #bcd;
 }
 
 .StarRating:hover .StarRating-delete {

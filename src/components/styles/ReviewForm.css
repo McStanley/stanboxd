@@ -6,6 +6,7 @@
   background-color: #456;
   display: flex;
   gap: 50px;
+  font-family: 'GraphikRegular';
   animation: fadeIn 150ms ease-in 0s 1 normal forwards;
 }
 
@@ -55,8 +56,8 @@
 }
 
 .ReviewForm-filmRelease {
-  font-family: 'GraphikRegular';
   font-size: 1.1rem;
+  color: #bcd;
 }
 
 .ReviewForm-textarea {
@@ -94,6 +95,10 @@
   color: #fff;
 }
 
+.ReviewForm-ratingDescription {
+  color: #bcd;
+}
+
 .ReviewForm-buttons {
   align-self: end;
   display: flex;
@@ -105,6 +110,7 @@
   padding: 8px 12px;
   border-radius: 3px;
   font-family: 'GraphikSemiBold';
+  font-size: 0.85rem;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;

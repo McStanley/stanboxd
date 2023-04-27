@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div id="App" className="App">
       <UserProvider>
         <Header
           openSignUp={toggleShowSignUp}
