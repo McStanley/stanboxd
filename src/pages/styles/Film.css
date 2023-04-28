@@ -23,6 +23,9 @@
 
 .Film-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .Film-header {
@@ -51,7 +54,6 @@
 }
 
 .Film-info {
-  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }
@@ -100,4 +102,24 @@
   display: flex;
   justify-content: center;
   font-size: 1.5rem;
+}
+
+.Film-reviews {
+  display: flex;
+  flex-direction: column;
+}
+
+.Film-reviewsHeader {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #456;
+  font-family: 'GraphikRegular';
+  font-size: 0.85rem;
+  color: #9ab;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Film-reviewsInfo {
+  margin-top: 15px;
+  color: #bcd;
 }
