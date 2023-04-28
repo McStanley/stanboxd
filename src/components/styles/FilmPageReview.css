@@ -1,0 +1,47 @@
+.FilmPageReview {
+  padding: 15px 0;
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.FilmPageReview:not(:last-of-type) {
+  border-bottom: 1px solid #2c3440;
+}
+
+.FilmPageReview-avatar {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+}
+
+.FilmPageReview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.FilmPageReview-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'GraphikRegular';
+  font-size: 0.85rem;
+  color: #678;
+  white-space: break-spaces;
+}
+
+.FilmPageReview-author {
+  font-family: 'GraphikSemibold';
+  color: #abc;
+}
+
+.FilmPageReview-text {
+  font-family: 'PlayfairDisplayRegular';
+  color: #9ab;
+  white-space: pre-wrap;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
