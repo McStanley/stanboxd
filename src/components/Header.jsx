@@ -24,7 +24,9 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
       {!showSignIn && (
         <div className="Header-controls">
           <ul className="Header-list">
-            {userLoading && <li>Loading user data...</li>}
+            {userLoading && (
+              <li className="Header-loadingUser">Loading user data...</li>
+            )}
             {!userLoading && !userData && (
               <>
                 <li>
@@ -69,8 +71,10 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
                 </div>
               </li>
             )}
-            <li>Films</li>
-            <li>Members</li>
+            <li>
+              <Link to="/films">Films</Link>
+            </li>
+            <li className="Header-members">Members</li>
           </ul>
           <SearchBar />
         </div>

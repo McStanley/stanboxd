@@ -30,6 +30,14 @@
   color: #d8e0e8;
 }
 
+.Header-list > li {
+  display: flex;
+}
+
+.Header-list > :not(.Header-loadingUser):hover {
+  color: #fff;
+}
+
 .Header-userContainer {
   position: relative;
 }
@@ -88,4 +96,8 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 10px;
   margin-bottom: 10px;
+}
+
+.Header-members {
+  cursor: not-allowed;
 }

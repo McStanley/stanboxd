@@ -1,0 +1,60 @@
+.Films {
+  flex: 1;
+  padding: 25px 0 50px;
+  background: linear-gradient(180deg, #20272e, #14181c 350px);
+  display: flex;
+}
+
+.Films-content {
+  z-index: 10;
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+}
+
+.Films-sectionHeading {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  color: #9ab;
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #456;
+}
+
+.Films-main {
+  flex: 1 0 670px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Films-aside {
+  flex: 0 0 230px;
+}
+
+.Films-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.Films-button {
+  padding: 8px 12px;
+  background-color: #567;
+  border-radius: 3px;
+  font-family: 'GraphikSemiBold';
+  font-size: 0.85rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Films-button.active {
+  background-color: #00b020;
+}
+
+.Films-button:not(.active):hover {
+  background-color: #678;
+}

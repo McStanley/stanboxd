@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Poster from './Poster';
+import StarRating from './StarRating';
 import './styles/FilmEntry.css';
 
 function FilmEntry({ data, type }) {
@@ -35,6 +36,7 @@ function FilmEntry({ data, type }) {
               Original title: {data.original_title}
             </p>
           )}
+          {type === 'popular' && <StarRating value={data.vote_average / 2} />}
         </div>
       </div>
     </article>
@@ -48,8 +50,9 @@ FilmEntry.propTypes = {
     id: PropTypes.number,
     original_title: PropTypes.string,
     title: PropTypes.string,
+    vote_average: PropTypes.number,
   }).isRequired,
-  type: PropTypes.oneOf(['search']).isRequired,
+  type: PropTypes.oneOf(['popular', 'search']).isRequired,
 };
 
 export default FilmEntry;
