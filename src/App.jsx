@@ -5,6 +5,7 @@ import { UserProvider } from './contexts/UserContext';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Films from './pages/Films';
+import Reviews from './pages/Reviews';
 import Search from './pages/Search';
 import Film from './pages/Film';
 import About from './pages/About';
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home openSignUp={toggleShowSignUp} />} />
           <Route path="/films" element={<Films />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/search/:category/:query?" element={<Search />} />
           <Route
             path="/film/:id"

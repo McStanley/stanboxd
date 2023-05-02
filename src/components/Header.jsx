@@ -74,6 +74,9 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
             <li>
               <Link to="/films">Films</Link>
             </li>
+            <li>
+              <Link to="/reviews">Reviews</Link>
+            </li>
             <li className="Header-members">Members</li>
           </ul>
           <SearchBar />

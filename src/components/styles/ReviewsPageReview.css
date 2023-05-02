@@ -1,0 +1,76 @@
+.ReviewsPageReview {
+  padding: 15px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.ReviewsPageReview:not(:last-of-type) {
+  border-bottom: 1px solid #2c3440;
+}
+
+.ReviewsPageReview a {
+  text-decoration: none;
+}
+
+.ReviewsPageReview-posterContainer {
+  width: 80px;
+}
+
+.ReviewsPageReview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ReviewsPageReview-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.ReviewsPageReview-filmTitle {
+  font-family: 'PlayfairDisplayBlack';
+  font-size: 1.4rem;
+}
+
+.ReviewsPageReview-filmTitle:hover {
+  color: #40bcf4;
+}
+
+.ReviewsPageReview-filmReleaseYear {
+  font-family: 'GraphikRegular';
+  color: #89a;
+}
+
+.ReviewsPageReview-subheader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ReviewsPageReview-avatar {
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+}
+
+.ReviewsPageReview-reviewedBy {
+  font-family: 'GraphikRegular';
+  font-size: 0.85rem;
+  color: #678;
+}
+
+.ReviewsPageReview-username {
+  font-family: 'GraphikMedium';
+  color: #abc;
+}
+
+.ReviewsPageReview-text {
+  font-family: 'PlayfairDisplayRegular';
+  color: #9ab;
+  white-space: pre-wrap;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
