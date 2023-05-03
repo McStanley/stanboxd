@@ -9,6 +9,7 @@ import Reviews from './pages/Reviews';
 import Search from './pages/Search';
 import Film from './pages/Film';
 import About from './pages/About';
+import Settings from './pages/Settings';
 import Footer from './components/Footer';
 import Overlay from './components/Overlay';
 import SignUp from './components/SignUp';
@@ -49,6 +50,10 @@ function App() {
             element={<Film openSignIn={toggleShowSignIn} />}
           />
           <Route path="/about/:path" element={<About />} />
+          <Route
+            path="/settings/:tab?"
+            element={<Settings openSignIn={() => setShowSignIn(true)} />}
+          />
         </Routes>
         <Footer />
         {showSignUp && (

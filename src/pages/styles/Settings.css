@@ -1,0 +1,60 @@
+.Settings {
+  flex: 1;
+  padding: 25px 0 50px;
+  background: linear-gradient(180deg, #20272e, #14181c 350px);
+  display: flex;
+}
+
+.Settings a {
+  text-decoration: none;
+}
+
+.Settings-content {
+  z-index: 10;
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.Settings-title {
+  font-family: 'GraphikRegular';
+  font-size: 1.5rem;
+  color: #abc;
+  text-transform: capitalize;
+}
+
+.Settings-signIn {
+  text-decoration: 1px solid underline;
+}
+
+.Settings-signIn:hover {
+  color: #40bcf4;
+}
+
+.Settings-nav {
+  border-bottom: 1px solid #456;
+  display: flex;
+  gap: 15px;
+}
+
+.Settings-navEntry {
+  position: relative;
+  bottom: -1px;
+  padding-bottom: 5px;
+  font-family: 'GraphikRegular';
+  font-size: 0.85rem;
+  color: #00e054;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.Settings-navEntry:hover {
+  border-bottom: 1px solid #00e054;
+}
+
+.Settings-navEntry.active {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}

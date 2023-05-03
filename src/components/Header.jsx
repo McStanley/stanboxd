@@ -61,6 +61,9 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
                     />
                   </div>
                   <div className="Header-dropdownDivider" />
+                  <Link to="/settings">
+                    <div className="Header-dropdownEntry">Settings</div>
+                  </Link>
                   <button
                     className="Header-dropdownEntry"
                     type="button"
