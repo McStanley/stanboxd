@@ -1,0 +1,127 @@
+.AvatarSettings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: 'GraphikRegular';
+}
+
+.AvatarSettings-title {
+  font-size: 1.2rem;
+}
+
+.AvatarSettings-mainContainer {
+  border: 1px solid #24303c;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.AvatarSettings-workspace {
+  position: relative;
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.AvatarSettings-userAvatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid #24303c;
+}
+
+.AvatarSettings-editorContainer {
+  background-image: linear-gradient(
+      45deg,
+      rgba(200, 212, 224, 0.05) 25%,
+      transparent 0
+    ),
+    linear-gradient(135deg, rgba(200, 212, 224, 0.05) 25%, transparent 0),
+    linear-gradient(45deg, transparent 75%, rgba(200, 212, 224, 0.05) 0),
+    linear-gradient(135deg, transparent 75%, rgba(200, 212, 224, 0.05) 0);
+  background-position: 0 0, 10px 0, 10px -10px, 0 10px;
+  background-size: 20px 20px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.AvatarSettings-editorWrapper {
+  margin: auto;
+}
+
+.AvatarSettings-workspaceAside {
+  padding: 0 20px;
+  background-color: #14181c;
+  border-left: 1px solid #24303c;
+  display: flex;
+}
+
+.AvatarSettings-preview {
+  margin: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.AvatarSettings-previewAvatar {
+  box-sizing: border-box;
+  height: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+}
+
+.AvatarSettings-previewUsername {
+  margin-top: 6px;
+  font-family: 'GraphikSemibold';
+  font-size: 0.95rem;
+}
+
+.AvatarSettings-toolbar {
+  position: relative;
+  padding: 15px 0;
+  background-color: #303c48;
+  display: flex;
+  justify-content: center;
+}
+
+.AvatarSettings-greenButton,
+.AvatarSettings-redButton {
+  padding: 8px 12px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.AvatarSettings-greenButton {
+  background-color: #00b020;
+  font-family: 'GraphikSemiBold';
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.AvatarSettings-redButton {
+  position: absolute;
+  right: 20px;
+  color: #9ab;
+  letter-spacing: 0.5px;
+}
+
+.AvatarSettings-redButton:hover {
+  background-color: red;
+  color: #fff;
+}
+
+.AvatarSettings-notice {
+  align-self: center;
+  font-size: 0.85rem;
+  color: #89a;
+}
+
+.AvatarSettings-notice abbr {
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}

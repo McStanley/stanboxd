@@ -14,6 +14,7 @@ import {
   setDoc,
   where,
 } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAZpXygv3EAu2SVjYV45W_LhHr5rwpDzDA',
@@ -27,6 +28,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 const register = async (username, email, password) => {
   const { user } = await createUserWithEmailAndPassword(auth, email, password);
@@ -53,4 +55,4 @@ const isUsernameAvailable = async (username) => {
   return !querySnapshot.size;
 };
 
-export { auth, db, isUsernameAvailable, login, logout, register };
+export { auth, db, isUsernameAvailable, login, logout, register, storage };

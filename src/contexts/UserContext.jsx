@@ -20,6 +20,7 @@ export function UserProvider({ children }) {
       : {
           uid: user.uid,
           username: userData.username,
+          avatarUrl: userData.avatarUrl || null,
         };
 
   const loading = userLoading || userDataLoading;

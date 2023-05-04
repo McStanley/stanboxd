@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useUserContext } from '../contexts/UserContext';
 import Loading from '../components/Loading';
 import ProfileSettings from '../components/ProfileSettings';
+import AvatarSettings from '../components/AvatarSettings';
 import './styles/Settings.css';
 
 const tabs = [
@@ -52,7 +53,11 @@ function Settings({ openSignIn }) {
               />
             )}
             {tab === 'avatar' && (
-              <p style={{ fontSize: '2rem', userSelect: 'none' }}>🚧</p>
+              <AvatarSettings
+                uid={userData.uid}
+                username={userData.username}
+                currentAvatar={userData.avatarUrl}
+              />
             )}
           </>
         )}
