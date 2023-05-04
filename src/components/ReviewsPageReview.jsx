@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { db } from '../firebase';
 import Poster from './Poster';
 import StarRating from './StarRating';
-import Avatar from '../assets/avatar.png';
+import DefaultAvatar from '../assets/avatar.png';
 import './styles/ReviewsPageReview.css';
 
 function ReviewsPageReview({ filmId, userId, rating, text, onLoad }) {
@@ -62,7 +62,7 @@ function ReviewsPageReview({ filmId, userId, rating, text, onLoad }) {
             <div className="ReviewsPageReview-subheader">
               <img
                 className="ReviewsPageReview-avatar"
-                src={Avatar}
+                src={userData.avatarUrl || DefaultAvatar}
                 alt={userData.username}
               />
               <p className="ReviewsPageReview-reviewedBy">

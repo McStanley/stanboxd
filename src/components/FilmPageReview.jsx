@@ -3,7 +3,7 @@ import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 import PropTypes from 'prop-types';
 import { db } from '../firebase';
 import StarRating from './StarRating';
-import Avatar from '../assets/avatar.png';
+import DefaultAvatar from '../assets/avatar.png';
 import './styles/FilmPageReview.css';
 
 function FilmPageReview({ userId, rating, text }) {
@@ -17,7 +17,7 @@ function FilmPageReview({ userId, rating, text }) {
     <article className="FilmPageReview">
       <img
         className="FilmPageReview-avatar"
-        src={Avatar}
+        src={userData.avatarUrl || DefaultAvatar}
         alt={userData.username}
       />
       <div className="FilmPageReview-main">
