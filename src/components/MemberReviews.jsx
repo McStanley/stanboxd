@@ -70,7 +70,7 @@ function MemberReviews({ uid, username }) {
   return (
     <div className="MemberReviews">
       <div className="MemberReviews-header">{username}&apos;s reviews</div>
-      {(reviewsLoading || !filmsData) && (
+      {(reviewsLoading || (!!reviewsData.length && !filmsData)) && (
         <p className="MemberReviews-notice">Loading reviews...</p>
       )}
       {!reviewsLoading && !reviewsData.length && (

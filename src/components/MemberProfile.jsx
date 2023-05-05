@@ -72,7 +72,7 @@ function MemberProfile({ uid }) {
     <div className="MemberProfile">
       <div className="MemberProfile-section">
         <div className="MemberProfile-sectionHeader">Recent reviews</div>
-        {(reviewsLoading || !filmsData) && (
+        {(reviewsLoading || (!!reviewsData.length && !filmsData)) && (
           <p className="MemberProfile-notice">Loading reviews...</p>
         )}
         {!reviewsLoading && !reviewsData.length && (

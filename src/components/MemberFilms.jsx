@@ -73,7 +73,9 @@ function MemberFilms({ uid, username }) {
   return (
     <div className="MemberFilms">
       <div className="MemberFilms-header">{username}&apos;s films</div>
-      {(reviewsLoading || !filmsData) && <p>Loading films...</p>}
+      {(reviewsLoading || (!!reviewsData.length && !filmsData)) && (
+        <p>Loading films...</p>
+      )}
       {!reviewsLoading && !reviewsData.length && <p>No films yet.</p>}
       {!reviewsLoading && !!reviewsData.length && (
         <div className="MemberFilms-filmList">{filmElements}</div>
