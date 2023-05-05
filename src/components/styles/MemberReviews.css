@@ -1,0 +1,16 @@
+.MemberReviews {
+  width: 630px;
+}
+
+.MemberReviews-header {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #456;
+  font-size: 0.85rem;
+  color: #9ab;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.MemberReviews-notice {
+  margin-top: 15px;
+}

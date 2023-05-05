@@ -1,0 +1,60 @@
+.Member {
+  flex: 1;
+  padding: 25px 0 50px;
+  background: linear-gradient(180deg, #20272e, #14181c 350px);
+  display: flex;
+}
+
+.Member-content {
+  z-index: 10;
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.Member-header {
+  display: flex;
+  gap: 10px;
+}
+
+.Member-avatar {
+  height: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid hsl(0deg 0% 100% / 25%);
+}
+
+.Member-info {
+  margin: 10px 0;
+}
+
+.Member-username {
+  font-family: 'GraphikSemibold';
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.Member-nav {
+  border: 1px solid #24303c;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+}
+
+.Member-navItem {
+  padding: 12px;
+  color: #9ab;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.Member-navItem:hover {
+  color: #40bcf4;
+}
+
+.Member-navItem.active {
+  color: #fff;
+  border-bottom: 1px solid #00e054;
+}

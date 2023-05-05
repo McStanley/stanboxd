@@ -1,0 +1,59 @@
+.MemberPageReview {
+  padding: 15px 0;
+  display: flex;
+  gap: 20px;
+}
+
+.MemberPageReview:not(:last-of-type) {
+  border-bottom: 1px solid #2c3440;
+}
+
+.MemberPageReview a {
+  text-decoration: none;
+}
+
+.MemberPageReview-posterContainer {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.MemberPageReview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.MemberPageReview-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.MemberPageReview-filmTitle {
+  font-family: 'PlayfairDisplayBlack';
+  font-size: 1.4rem;
+}
+
+.MemberPageReview-filmTitle:hover {
+  color: #40bcf4;
+}
+
+.MemberPageReview-filmReleaseYear {
+  font-family: 'GraphikRegular';
+  color: #89a;
+}
+
+.MemberPageReview-noRating {
+  font-size: 0.8rem;
+  color: #9ab;
+  text-transform: uppercase;
+}
+
+.MemberPageReview-text {
+  font-family: 'PlayfairDisplayRegular';
+  color: #9ab;
+  white-space: pre-wrap;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}

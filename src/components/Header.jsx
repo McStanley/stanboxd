@@ -61,6 +61,16 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
                     />
                   </div>
                   <div className="Header-dropdownDivider" />
+                  <Link to="/" className="Header-dropdownEntry">
+                    Home
+                  </Link>
+                  <Link
+                    to={`/member/${userData.uid}`}
+                    className="Header-dropdownEntry"
+                  >
+                    Profile
+                  </Link>
+                  <div className="Header-dropdownDivider" />
                   <Link to="/settings">
                     <div className="Header-dropdownEntry">Settings</div>
                   </Link>

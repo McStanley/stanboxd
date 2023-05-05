@@ -1,0 +1,30 @@
+.MemberFilms {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.MemberFilms-header {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #456;
+  font-size: 0.85rem;
+  color: #9ab;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.MemberFilms-filmList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 10px;
+}
+
+.MemberFilms-filmEntry {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.MemberFilms-posterContainer {
+  width: 95px;
+}

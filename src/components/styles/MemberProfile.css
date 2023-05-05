@@ -1,0 +1,16 @@
+.MemberProfile {
+  width: 630px;
+}
+
+.MemberProfile-sectionHeader {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #456;
+  font-size: 0.85rem;
+  color: #9ab;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.MemberProfile-notice {
+  margin-top: 15px;
+}

@@ -8,6 +8,7 @@ import Films from './pages/Films';
 import Reviews from './pages/Reviews';
 import Search from './pages/Search';
 import Film from './pages/Film';
+import Member from './pages/Member';
 import About from './pages/About';
 import Settings from './pages/Settings';
 import Footer from './components/Footer';
@@ -49,6 +50,7 @@ function App() {
             path="/film/:id"
             element={<Film openSignIn={toggleShowSignIn} />}
           />
+          <Route path="/member/:uid/:tab?" element={<Member />} />
           <Route path="/about/:path" element={<About />} />
           <Route
             path="/settings/:tab?"
