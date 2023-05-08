@@ -58,7 +58,7 @@
   display: none;
   position: absolute;
   top: 0;
-  padding: 10px 0;
+  padding: 10px 0 6px;
   transform: translate(-10px, -10px);
   min-width: 100px;
   background-color: #89a;
@@ -75,10 +75,12 @@
   padding-left: 10px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .Header-dropdownEntry {
-  padding: 4px 12px;
+  padding: 6px 12px;
   font-family: GraphikRegular;
   font-size: 0.8rem;
   text-transform: none;
@@ -94,8 +96,8 @@
   position: relative;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 10px;
-  margin-bottom: 10px;
+  padding-top: 6px;
+  margin-bottom: 6px;
 }
 
 .Header-members {

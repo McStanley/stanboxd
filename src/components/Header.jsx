@@ -44,7 +44,7 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
             {!userLoading && userData && (
               <li className="Header-userContainer">
                 <div className="Header-user">
-                  {userData.username}{' '}
+                  {userData.username}
                   <img
                     className="Header-dropdownIcon"
                     src={Dropdown}
@@ -53,7 +53,7 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
                 </div>
                 <div className="Header-dropdown">
                   <div className="Header-dropdownUser">
-                    {userData.username}{' '}
+                    {userData.username}
                     <img
                       className="Header-dropdownIcon"
                       src={Dropdown}
@@ -69,6 +69,18 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
                     className="Header-dropdownEntry"
                   >
                     Profile
+                  </Link>
+                  <Link
+                    to={`/member/${userData.uid}/films`}
+                    className="Header-dropdownEntry"
+                  >
+                    Films
+                  </Link>
+                  <Link
+                    to={`/member/${userData.uid}/reviews`}
+                    className="Header-dropdownEntry"
+                  >
+                    Reviews
                   </Link>
                   <div className="Header-dropdownDivider" />
                   <Link to="/settings">
