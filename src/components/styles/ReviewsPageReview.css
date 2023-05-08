@@ -48,12 +48,22 @@
   gap: 5px;
 }
 
+.ReviewsPageReview-avatarLink {
+  border-radius: 50%;
+  display: flex;
+}
+
 .ReviewsPageReview-avatar {
   box-sizing: border-box;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   border: 1px solid hsla(0, 0%, 100%, 0.25);
+  transition: border 200ms ease;
+}
+
+.ReviewsPageReview-avatar:hover {
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
 }
 
 .ReviewsPageReview-reviewedBy {

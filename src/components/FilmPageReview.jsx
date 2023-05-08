@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { doc } from 'firebase/firestore';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 import PropTypes from 'prop-types';
@@ -15,11 +16,13 @@ function FilmPageReview({ userId, rating, text }) {
 
   return (
     <article className="FilmPageReview">
-      <img
-        className="FilmPageReview-avatar"
-        src={userData.avatarUrl || DefaultAvatar}
-        alt={userData.username}
-      />
+      <Link to={`/member/${userId}`} className="FilmPageReview-avatarLink">
+        <img
+          className="FilmPageReview-avatar"
+          src={userData.avatarUrl || DefaultAvatar}
+          alt={userData.username}
+        />
+      </Link>
       <div className="FilmPageReview-main">
         <div className="FilmPageReview-header">
           <p>

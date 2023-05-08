@@ -9,12 +9,22 @@
   border-bottom: 1px solid #2c3440;
 }
 
+.FilmPageReview-avatarLink {
+  border-radius: 50%;
+  display: flex;
+}
+
 .FilmPageReview-avatar {
   box-sizing: border-box;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1px solid hsla(0, 0%, 100%, 0.25);
+  transition: border 200ms ease;
+}
+
+.FilmPageReview-avatar:hover {
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
 }
 
 .FilmPageReview-main {

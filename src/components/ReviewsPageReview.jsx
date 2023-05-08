@@ -60,11 +60,16 @@ function ReviewsPageReview({ filmId, userId, rating, text, onLoad }) {
               <p className="ReviewsPageReview-filmReleaseYear">{releaseYear}</p>
             </div>
             <div className="ReviewsPageReview-subheader">
-              <img
-                className="ReviewsPageReview-avatar"
-                src={userData.avatarUrl || DefaultAvatar}
-                alt={userData.username}
-              />
+              <Link
+                to={`/member/${userId}`}
+                className="ReviewsPageReview-avatarLink"
+              >
+                <img
+                  className="ReviewsPageReview-avatar"
+                  src={userData.avatarUrl || DefaultAvatar}
+                  alt={userData.username}
+                />
+              </Link>
               <p className="ReviewsPageReview-reviewedBy">
                 Reviewed by{' '}
                 <span className="ReviewsPageReview-username">
