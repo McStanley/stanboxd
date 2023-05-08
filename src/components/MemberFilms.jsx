@@ -56,7 +56,7 @@ function MemberFilms({ uid, username }) {
       const filmData = filmsData[entry.film_id];
 
       return (
-        <article className="MemberFilms-filmEntry">
+        <article className="MemberFilms-filmEntry" key={entry.film_id}>
           <div className="MemberFilms-posterContainer">
             <Poster
               id={filmData.id}
