@@ -16,7 +16,7 @@
 
 .Member-header {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .Member-avatar {
@@ -27,13 +27,40 @@
 }
 
 .Member-info {
-  margin: 10px 0;
+  margin: 20px 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .Member-username {
   font-family: 'GraphikSemibold';
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   letter-spacing: 0.5px;
+}
+
+.Member-edit {
+  padding: 7px 10px;
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.2);
+  background-color: #567;
+  border-radius: 3px;
+  font-family: 'GraphikSemibold';
+  font-size: 0.7rem;
+  color: #c8d4e0;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.Member-edit:hover {
+  background: #678;
+  color: #fff;
+}
+
+.Member-edit:active {
+  background: #4a5968;
+  color: #c8d4e0;
 }
 
 .Member-nav {

@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { doc } from 'firebase/firestore';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 import { db } from '../firebase';
+import { useUserContext } from '../contexts/UserContext';
 import Loading from '../components/Loading';
 import MemberProfile from '../components/MemberProfile';
 import MemberFilms from '../components/MemberFilms';
@@ -19,6 +20,7 @@ function Member() {
   const { uid, tab = '' } = useParams();
   const userRef = doc(db, 'users', uid);
   const [userData, userLoading] = useDocumentDataOnce(userRef);
+  const [userContext] = useUserContext();
 
   const activeIndex = tabs.findIndex((entry) => entry.path === tab);
   const activeTab = tabs[activeIndex];
@@ -50,6 +52,11 @@ function Member() {
               />
               <div className="Member-info">
                 <p className="Member-username">{userData.username}</p>
+                {uid === userContext?.uid && (
+                  <Link className="Member-edit" to="/settings" role="button">
+                    Edit profile
+                  </Link>
+                )}
               </div>
             </div>
             <nav className="Member-nav">{navElements}</nav>
