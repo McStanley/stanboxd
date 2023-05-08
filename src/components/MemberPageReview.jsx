@@ -42,8 +42,13 @@ MemberPageReview.propTypes = {
   filmTitle: PropTypes.string.isRequired,
   filmRelease: PropTypes.string.isRequired,
   posterPath: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired,
+  rating: PropTypes.number,
+  text: PropTypes.string,
+};
+
+MemberPageReview.defaultProps = {
+  rating: null,
+  text: null,
 };
 
 export default MemberPageReview;
