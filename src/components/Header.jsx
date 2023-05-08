@@ -5,6 +5,7 @@ import { logout } from '../firebase';
 import { useUserContext } from '../contexts/UserContext';
 import SearchBar from './SearchBar';
 import SignIn from './SignIn';
+import DefaultAvatar from '../assets/avatar.png';
 import Dropdown from '../assets/dropdown.svg';
 import './styles/Header.css';
 
@@ -15,6 +16,18 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
     await logout();
     toast.success('Signed out successfully.');
   };
+
+  const userBanner = userData && (
+    <>
+      <img
+        className="Header-avatar"
+        src={userData.avatarUrl || DefaultAvatar}
+        alt={userData.username}
+      />
+      {userData.username}
+      <img className="Header-dropdownIcon" src={Dropdown} alt="Dropdown" />
+    </>
+  );
 
   return (
     <header className="Header">
@@ -43,23 +56,9 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
             )}
             {!userLoading && userData && (
               <li className="Header-userContainer">
-                <div className="Header-user">
-                  {userData.username}
-                  <img
-                    className="Header-dropdownIcon"
-                    src={Dropdown}
-                    alt="Dropdown"
-                  />
-                </div>
+                <div className="Header-user">{userBanner}</div>
                 <div className="Header-dropdown">
-                  <div className="Header-dropdownUser">
-                    {userData.username}
-                    <img
-                      className="Header-dropdownIcon"
-                      src={Dropdown}
-                      alt="Dropdown"
-                    />
-                  </div>
+                  <div className="Header-dropdownUser">{userBanner}</div>
                   <div className="Header-dropdownDivider" />
                   <Link to="/" className="Header-dropdownEntry">
                     Home

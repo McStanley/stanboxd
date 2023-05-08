@@ -47,6 +47,16 @@
   align-items: center;
 }
 
+.Header-avatar {
+  margin-right: 5px;
+  transform: translateY(-1px);
+  box-sizing: border-box;
+  height: 24px;
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
 .Header-dropdownIcon {
   height: 24px;
   /* color: #d8e0e8; */
