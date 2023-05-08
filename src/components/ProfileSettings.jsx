@@ -18,7 +18,9 @@ function ProfileSettings({ uid, username }) {
     toast.dismiss();
 
     if (usernameValue !== username) {
-      if (await isUsernameAvailable(usernameValue)) {
+      if (usernameValue === '') {
+        toast.error('Username cannot be empty.');
+      } else if (await isUsernameAvailable(usernameValue)) {
         const userRef = doc(db, 'users', uid);
 
         await updateDoc(userRef, {
