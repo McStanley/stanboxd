@@ -101,7 +101,9 @@ function Header({ openSignUp, showSignIn, toggleShowSignIn }) {
             <li>
               <Link to="/reviews">Reviews</Link>
             </li>
-            <li className="Header-members">Members</li>
+            <li>
+              <Link to="/members">Members</Link>
+            </li>
           </ul>
           <SearchBar />
         </div>

@@ -1,0 +1,80 @@
+.Members {
+  flex: 1;
+  padding: 60px 0 50px;
+  background: linear-gradient(180deg, #20272e, #14181c 350px);
+  display: flex;
+}
+
+.Members a {
+  text-decoration: none;
+}
+
+.Members-content {
+  z-index: 10;
+  width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.Members-header {
+  text-align: center;
+  font-family: 'GraphikRegular';
+  font-size: 1.4rem;
+  color: #abc;
+  letter-spacing: 0.5px;
+}
+
+.Members-sectionHeading {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  color: #9ab;
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #456;
+}
+
+.Members-usersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.Members-user {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.Members-avatarLink {
+  display: flex;
+  border-radius: 50%;
+  transition: box-shadow 200ms;
+}
+
+.Members-avatarLink:hover {
+  box-shadow: inset 0px 0px 0px 2px hsla(0, 0%, 100%, 0.5);
+}
+
+.Members-avatar {
+  z-index: -1;
+  box-sizing: border-box;
+  height: 150px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+}
+
+.Members-username {
+  text-align: center;
+}
+
+.Members-username:hover {
+  color: #def;
+}

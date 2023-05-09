@@ -11,6 +11,7 @@ import {
   getDocs,
   getFirestore,
   query,
+  serverTimestamp,
   setDoc,
   where,
 } from 'firebase/firestore';
@@ -35,6 +36,7 @@ const register = async (username, email, password) => {
 
   await setDoc(doc(db, 'users', user.uid), {
     username,
+    registeredAt: serverTimestamp(),
   });
 };
 
