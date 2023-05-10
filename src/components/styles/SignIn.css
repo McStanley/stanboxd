@@ -47,11 +47,14 @@
 
 .SignIn-forgotten {
   color: #00e054;
-  cursor: not-allowed;
 }
 
 .SignIn-forgotten:hover {
   color: #fff;
+}
+
+.SignIn-forgotten:active {
+  text-decoration: underline dotted #00e054;
 }
 
 .SignIn input {

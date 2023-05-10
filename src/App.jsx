@@ -12,6 +12,9 @@ import Film from './pages/Film';
 import Member from './pages/Member';
 import About from './pages/About';
 import Settings from './pages/Settings';
+import PasswordRequest from './pages/PasswordRequest';
+import ActionHandler from './pages/ActionHandler';
+import PasswordReset from './pages/PasswordReset';
 import Footer from './components/Footer';
 import Overlay from './components/Overlay';
 import SignUp from './components/SignUp';
@@ -58,6 +61,9 @@ function App() {
             path="/settings/:tab?"
             element={<Settings openSignIn={() => setShowSignIn(true)} />}
           />
+          <Route path="/user/request-password" element={<PasswordRequest />} />
+          <Route path="/user/action-handler" element={<ActionHandler />} />
+          <Route path="/user/reset-password" element={<PasswordReset />} />
         </Routes>
         <Footer />
         {showSignUp && (

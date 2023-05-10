@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import PropTypes from 'prop-types';
 import { login } from '../firebase';
@@ -51,7 +52,9 @@ function SignIn({ closePanel }) {
       <div className="SignIn-inputContainer">
         <div className="SignIn-inputContainerTop">
           <label htmlFor="signin-password">Password</label>
-          <p className="SignIn-forgotten">Forgotten?</p>
+          <Link to="/user/request-password">
+            <p className="SignIn-forgotten">Forgotten?</p>
+          </Link>
         </div>
         <input
           type="password"
