@@ -49,7 +49,7 @@ function Settings({ openSignIn }) {
             {tab === '' && (
               <ProfileSettings
                 uid={userData.uid}
-                username={userData.username}
+                currentUsername={userData.username}
               />
             )}
             {tab === 'avatar' && (

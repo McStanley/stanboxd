@@ -36,6 +36,7 @@ const register = async (username, email, password) => {
 
   await setDoc(doc(db, 'users', user.uid), {
     username,
+    usernameLc: username.toLowerCase(),
     registeredAt: serverTimestamp(),
   });
 };
@@ -50,7 +51,7 @@ const logout = async () => {
 
 const isUsernameAvailable = async (username) => {
   const usersRef = collection(db, 'users');
-  const q = query(usersRef, where('username', '==', username));
+  const q = query(usersRef, where('usernameLc', '==', username.toLowerCase()));
 
   const querySnapshot = await getDocs(q);
 

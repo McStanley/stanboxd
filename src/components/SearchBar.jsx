@@ -27,7 +27,9 @@ function SearchBar() {
     inputRef.current.blur();
     submitRef.current.blur();
 
-    navigate(`/search/films/${encodeURIComponent(value)}`);
+    const category = match?.params.category || 'films';
+
+    navigate(`/search/${category}/${encodeURIComponent(value)}`);
   };
 
   return (

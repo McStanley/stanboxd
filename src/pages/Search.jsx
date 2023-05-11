@@ -4,6 +4,7 @@ import searchFilms from '../utils/searchFilms';
 import searchMembers from '../utils/searchMembers';
 import Loading from '../components/Loading';
 import FilmEntry from '../components/FilmEntry';
+import DefaultAvatar from '../assets/avatar.png';
 import './styles/Search.css';
 
 const categories = [
@@ -76,6 +77,24 @@ function Search() {
       resultsCount = results?.total_results;
       break;
 
+    case 'members':
+      resultsElements = results?.map?.((entry) => (
+        <article className="Search-user" key={entry.id}>
+          <Link to={`/member/${entry.id}`} className="Search-avatarLink">
+            <img
+              className="Search-avatar"
+              src={entry.avatarUrl || DefaultAvatar}
+              alt={entry.username}
+            />
+          </Link>
+          <Link to={`/member/${entry.id}`}>
+            <p className="Search-username">{entry.username}</p>
+          </Link>
+        </article>
+      ));
+      resultsCount = results?.length;
+      break;
+
     default:
       resultsElements = null;
       resultsCount = null;
@@ -119,6 +138,17 @@ function Search() {
         <aside className="Search-aside">
           <h2 className="Search-sectionHeading">Show results for</h2>
           <nav className="Search-nav">{navElements}</nav>
+          {category === 'members' && !isLoading && (
+            <>
+              <h2 className="Search-sectionHeading">
+                Can&apos;t find a friend?
+              </h2>
+              <p className="Search-notice">
+                You have to specify the complete username to find a user. Member
+                search is not case sensitive.
+              </p>
+            </>
+          )}
         </aside>
       </div>
     </div>

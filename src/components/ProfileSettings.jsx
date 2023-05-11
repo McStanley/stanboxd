@@ -7,30 +7,62 @@ import PropTypes from 'prop-types';
 import { db, isUsernameAvailable } from '../firebase';
 import './styles/ProfileSettings.css';
 
-function ProfileSettings({ uid, username }) {
+function ProfileSettings({ uid, currentUsername }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [usernameValue, setUsernameValue] = useState(username);
+  const [usernameValue, setUsernameValue] = useState(currentUsername);
   const usernameInputId = useId();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    document.activeElement.blur();
     toast.dismiss();
 
-    if (usernameValue !== username) {
-      if (usernameValue === '') {
-        toast.error('Username cannot be empty.');
-      } else if (await isUsernameAvailable(usernameValue)) {
-        const userRef = doc(db, 'users', uid);
+    if (usernameValue === currentUsername) return;
 
-        await updateDoc(userRef, {
-          username: usernameValue,
-        });
+    if (usernameValue === '') {
+      toast.error('Username cannot be empty.');
+      return;
+    }
 
-        toast.success('Username changed successfully.');
-      } else {
-        toast.error('This username is already taken.');
-      }
+    if (usernameValue.startsWith(' ')) {
+      toast.error('Username cannot start with a space.');
+      return;
+    }
+
+    if (usernameValue.endsWith(' ')) {
+      toast.error('Username cannot end with a space.');
+      return;
+    }
+
+    if (/\s\s/.test(usernameValue)) {
+      toast.error('Username cannot have consecutive spaces.');
+      return;
+    }
+
+    if (usernameValue.length > 24) {
+      toast.error('Maximum username length is 24 characters.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const usernameValueLc = usernameValue.toLowerCase();
+    const currentUsernameLc = currentUsername.toLowerCase();
+
+    if (
+      usernameValueLc === currentUsernameLc ||
+      (await isUsernameAvailable(usernameValue))
+    ) {
+      const userRef = doc(db, 'users', uid);
+
+      await updateDoc(userRef, {
+        username: usernameValue,
+        usernameLc: usernameValueLc,
+      });
+
+      toast.success('Username changed successfully.');
+    } else {
+      toast.error('This username is already taken.');
     }
 
     setIsSubmitting(false);
@@ -66,7 +98,7 @@ function ProfileSettings({ uid, username }) {
 
 ProfileSettings.propTypes = {
   uid: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
+  currentUsername: PropTypes.string.isRequired,
 };
 
 export default ProfileSettings;

@@ -46,10 +46,6 @@
 
 .Members-user {
   width: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
 }
 
 .Members-avatarLink {
@@ -65,14 +61,16 @@
 .Members-avatar {
   z-index: -1;
   box-sizing: border-box;
-  height: 150px;
+  width: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 1px solid hsla(0, 0%, 100%, 0.25);
 }
 
 .Members-username {
+  margin-top: 15px;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .Members-username:hover {

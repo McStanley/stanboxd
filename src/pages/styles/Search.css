@@ -5,6 +5,10 @@
   display: flex;
 }
 
+.Search a {
+  text-decoration: none;
+}
+
 .Search-content {
   z-index: 10;
   width: 950px;
@@ -46,6 +50,10 @@
   flex: 0 0 230px;
 }
 
+.Search-aside > .Search-sectionHeading:not(:first-of-type) {
+  margin-top: 60px;
+}
+
 .Search-nav {
   color: #9ab;
   font-family: 'GraphikRegular';
@@ -67,4 +75,46 @@
 
 .Search-navItem:not(.active):hover {
   color: #40bcf4;
+}
+
+.Search-notice {
+  line-height: 1.5;
+  font-family: 'GraphikRegular';
+  font-size: 0.85rem;
+  color: #89a;
+  text-align: justify;
+}
+
+.Search-user {
+  margin: 25px auto 0;
+  width: 150px;
+}
+
+.Search-avatarLink {
+  display: flex;
+  border-radius: 50%;
+  transition: box-shadow 200ms;
+}
+
+.Search-avatarLink:hover {
+  box-shadow: inset 0px 0px 0px 2px hsla(0, 0%, 100%, 0.5);
+}
+
+.Search-avatar {
+  z-index: -1;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+}
+
+.Search-username {
+  margin-top: 15px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.Search-username:hover {
+  color: #def;
 }
