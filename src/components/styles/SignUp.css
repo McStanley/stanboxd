@@ -48,6 +48,7 @@
   width: 200px;
   padding: 10px;
   background-color: #cde;
+  outline: none;
   border: none;
   border-radius: 4px;
   color: #567;
@@ -81,4 +82,10 @@
 
 .SignUp-submit:active {
   background-color: #00971b;
+}
+
+.SignUp-submit.disabled {
+  background-color: #234;
+  color: #89a;
+  pointer-events: none;
 }

@@ -17,9 +17,11 @@ function SignUp({ closePanel }) {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    document.activeElement.blur();
     toast.dismiss();
 
     const emptyFields = [];
@@ -36,8 +38,11 @@ function SignUp({ closePanel }) {
       return;
     }
 
+    setIsSubmitting(true);
+
     if (!(await isUsernameAvailable(username))) {
       toast.error('This username is taken.');
+      setIsSubmitting(false);
 
       return;
     }
@@ -58,6 +63,7 @@ function SignUp({ closePanel }) {
       const toastContent = AUTH_ERRORS[error.code] || unknownErrorMessage;
 
       toast.error(toastContent);
+      setIsSubmitting(false);
     }
   };
 
@@ -100,7 +106,10 @@ function SignUp({ closePanel }) {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button className="SignUp-submit" type="submit">
+      <button
+        className={`SignUp-submit ${isSubmitting && 'disabled'}`}
+        type="submit"
+      >
         Sign up
       </button>
     </form>
