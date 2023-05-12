@@ -54,6 +54,7 @@
   font-family: 'PlayfairDisplayRegular';
   color: #9ab;
   white-space: pre-wrap;
+  text-align: justify;
   letter-spacing: 0.5px;
   line-height: 1.5;
 }
