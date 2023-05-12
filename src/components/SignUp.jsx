@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import PropTypes from 'prop-types';
 import { isUsernameAvailable, register } from '../firebase';
+import checkUsernameValidity from '../utils/checkUsernameValidity';
 import './styles/SignUp.css';
 
 const AUTH_ERRORS = {
@@ -35,6 +36,13 @@ function SignUp({ closePanel }) {
         toast.error(`Please complete your ${entry}.`);
       });
 
+      return;
+    }
+
+    try {
+      checkUsernameValidity(username);
+    } catch (error) {
+      toast.error(error.message);
       return;
     }
 
