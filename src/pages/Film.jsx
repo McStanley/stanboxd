@@ -7,6 +7,7 @@ import { db } from '../firebase';
 import Loading from '../components/Loading';
 import Background from '../components/Background';
 import Poster from '../components/Poster';
+import FilmDetails from '../components/FilmDetails';
 import FilmActions from '../components/FilmActions';
 import FilmPageReview from '../components/FilmPageReview';
 import './styles/Film.css';
@@ -20,7 +21,7 @@ function Film({ openSignIn }) {
   useEffect(() => {
     (async () => {
       const gatewayURL = '/api/gateway';
-      const apiURL = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits`;
+      const apiURL = `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits,alternative_titles`;
       const fetchURL = `${gatewayURL}?url=${encodeURIComponent(apiURL)}`;
 
       const response = await fetch(fetchURL);
@@ -94,6 +95,14 @@ function Film({ openSignIn }) {
           <div className="Film-details">
             <p className="Film-tagline">{filmData.tagline}</p>
             <p className="Film-overview">{filmData.overview}</p>
+            <FilmDetails
+              cast={filmData.credits.cast}
+              crew={filmData.credits.crew}
+              studios={filmData.production_companies}
+              languages={filmData.spoken_languages}
+              titles={filmData.alternative_titles.titles}
+              genres={filmData.genres}
+            />
           </div>
           <div className="Film-sidebar">
             <FilmActions

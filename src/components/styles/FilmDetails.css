@@ -1,0 +1,134 @@
+.FilmDetails {
+  margin-top: 35px;
+}
+
+.FilmDetails-nav {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  border-bottom: 1px solid #456;
+}
+
+.FilmDetails-navItem {
+  padding-bottom: 5px;
+  font-family: 'GraphikRegular';
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #00e054;
+  border-bottom: 1px solid transparent;
+}
+
+.FilmDetails-navItem:hover {
+  border-bottom-color: #00e054;
+}
+
+.FilmDetails-navItem.active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.FilmDetails-tileGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.FilmDetails-tile {
+  position: relative;
+  padding: 6px;
+  background-color: #283038;
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.05);
+  user-select: none;
+}
+
+button.FilmDetails-tile {
+  transition: all 200ms;
+}
+
+button.FilmDetails-tile:hover {
+  background-color: #303840;
+  color: #def;
+}
+
+.FilmDetails-popup {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+
+.FilmDetails-popup.visible {
+  opacity: 1;
+}
+
+.FilmDetails-popup > * {
+  background-color: #456;
+}
+
+.FilmDetails-popupText {
+  width: max-content;
+  padding: 8px;
+  font-family: 'GraphikMedium';
+  font-size: 0.75rem;
+  color: #bcd;
+  border-radius: 4px;
+}
+
+.FilmDetails-popupArrow {
+  width: 10px;
+  height: 5px;
+  margin: 0 auto;
+  clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+.FilmDetails-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.FilmDetails-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.FilmDetails-rowHeader {
+  flex-shrink: 0;
+  width: 156px;
+  border-bottom: 1px dotted #456;
+}
+
+.FilmDetails-rowTitle {
+  display: inline;
+  max-width: 80%;
+  text-overflow: ellipsis;
+  font-family: 'GraphikRegular';
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #789;
+  background-color: #14181c;
+  position: relative;
+  top: 3px;
+}
+
+.FilmDetails-rowTileGrid {
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.FilmDetails-titles {
+  font-family: 'GraphikRegular';
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
