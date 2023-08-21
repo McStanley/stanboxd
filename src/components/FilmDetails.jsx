@@ -167,7 +167,7 @@ function FilmDetails({ cast, crew, studios, languages, titles, genres }) {
               (entry) => entry.title
             ).join`, `}</p>
           ) : (
-            <div className="FilmDetails-rowTiles">
+            <div className="FilmDetails-rowTileGrid">
               {detailsData[key].map((entry) => (
                 <div
                   className="FilmDetails-tile"
