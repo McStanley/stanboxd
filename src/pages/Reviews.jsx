@@ -1,4 +1,5 @@
 import { useLayoutEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { collection, limit, orderBy, query } from 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import LinearProgress from '@mui/material/LinearProgress';
@@ -61,6 +62,9 @@ function Reviews() {
 
   return (
     <div className="Reviews">
+      <Helmet>
+        <title>Reviews • Stanboxd</title>
+      </Helmet>
       <div className="Reviews-content">
         <main className="Reviews-main">
           <div className="Reviews-sectionHeading">

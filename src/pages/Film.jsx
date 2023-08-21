@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
 import { collection, orderBy, query, where } from 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -69,6 +70,11 @@ function Film({ openSignIn }) {
 
   return (
     <div className="Film" style={styles}>
+      <Helmet>
+        <title>
+          {filmData.title} {releaseYear && `(${releaseYear})`} • Stanboxd
+        </title>
+      </Helmet>
       {filmData.backdrop_path && <Background path={filmData.backdrop_path} />}
       <aside className="Film-aside">
         <Poster

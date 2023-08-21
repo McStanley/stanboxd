@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { ToastBar, Toaster, toast } from 'react-hot-toast';
 import { UserProvider } from './contexts/UserContext';
@@ -39,6 +40,9 @@ function App() {
 
   return (
     <div id="App" className="App">
+      <Helmet>
+        <title>Stanboxd</title>
+      </Helmet>
       <UserProvider>
         <Header
           openSignUp={toggleShowSignUp}
@@ -56,7 +60,7 @@ function App() {
             element={<Film openSignIn={toggleShowSignIn} />}
           />
           <Route path="/member/:uid/:tab?" element={<Member />} />
-          <Route path="/about/:path" element={<About />} />
+          <Route path="/about/:path?" element={<About />} />
           <Route
             path="/settings/:tab?"
             element={<Settings openSignIn={() => setShowSignIn(true)} />}

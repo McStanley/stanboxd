@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 import { useId, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { sendPasswordResetEmail } from 'firebase/auth';
@@ -42,6 +43,9 @@ function PasswordRequest() {
 
   return (
     <main className="PasswordRequest">
+      <Helmet>
+        <title>Reset Password • Stanboxd</title>
+      </Helmet>
       <div className="PasswordRequest-content">
         <h2 className="PasswordRequest-header">Reset my password</h2>
         <p className="PasswordRequest-text">

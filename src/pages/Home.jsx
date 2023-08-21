@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import { useUserContext } from '../contexts/UserContext';
 import Loading from '../components/Loading';
@@ -41,6 +42,9 @@ function Home({ openSignUp }) {
 
   return (
     <main className="Home">
+      <Helmet>
+        <title>Stanboxd • The best Letterboxd clone out there.</title>
+      </Helmet>
       {trendingData[0] && <Background path={trendingData[0].backdrop_path} />}
       <h2 className="Home-heading">
         Track films you’ve watched. <br /> Save those you want to see. <br />

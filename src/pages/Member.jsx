@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
 import { doc } from 'firebase/firestore';
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
@@ -37,6 +38,13 @@ function Member() {
 
   return (
     <div className="Member">
+      <Helmet>
+        {userData && (
+          <title>
+            {userData.username}&apos;s {activeTab.name.toLowerCase()} • Stanboxd
+          </title>
+        )}
+      </Helmet>
       <div className="Member-content">
         {userLoading && <Loading />}
         {!userLoading && !userData && (
@@ -67,4 +75,5 @@ function Member() {
     </div>
   );
 }
+
 export default Member;

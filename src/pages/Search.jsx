@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import searchFilms from '../utils/searchFilms';
 import searchMembers from '../utils/searchMembers';
@@ -102,6 +103,9 @@ function Search() {
 
   return (
     <div className="Search">
+      <Helmet>
+        <title>Search results for {query} • Stanboxd</title>
+      </Helmet>
       <div className="Search-content">
         <main className="Search-main">
           {isLoading && <Loading />}

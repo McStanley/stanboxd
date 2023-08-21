@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { collection, limit, orderBy, query } from 'firebase/firestore';
 import { useCollectionOnce } from 'react-firebase-hooks/firestore';
@@ -33,6 +34,9 @@ function Members() {
 
   return (
     <div className="Members">
+      <Helmet>
+        <title>Members • Stanboxd</title>
+      </Helmet>
       <div className="Members-content">
         <div className="Members-header">
           Film lovers and critics — find other members.
@@ -47,4 +51,5 @@ function Members() {
     </div>
   );
 }
+
 export default Members;

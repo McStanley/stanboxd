@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Loading from '../components/Loading';
 import FilmEntry from '../components/FilmEntry';
 import './styles/Films.css';
@@ -35,6 +36,9 @@ function Films() {
 
   return (
     <div className="Films">
+      <Helmet>
+        <title>Films • Stanboxd</title>
+      </Helmet>
       <div className="Films-content">
         <main className="Films-main">
           <div className="Films-sectionHeading">

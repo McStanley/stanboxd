@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useUserContext } from '../contexts/UserContext';
@@ -25,8 +26,13 @@ function Settings({ openSignIn }) {
     </Link>
   ));
 
+  const tabName = tabs.find((entry) => entry.path === tab).name;
+
   return (
     <div className="Settings">
+      <Helmet>
+        <title>{tabName} settings • Stanboxd</title>
+      </Helmet>
       <div className="Settings-content">
         <p className="Settings-title">Account settings</p>
         {userLoading && <Loading />}

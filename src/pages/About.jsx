@@ -1,15 +1,16 @@
+import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
 import FilmData from '../components/FilmData';
 import Author from '../components/Author';
 import './styles/About.css';
 
+const pages = [
+  { title: 'Film data', path: 'film-data', component: <FilmData /> },
+  { title: 'Author', path: 'author', component: <Author /> },
+];
+
 function About() {
   const { path } = useParams();
-
-  const pages = [
-    { title: 'Film data', path: 'film-data', component: <FilmData /> },
-    { title: 'Author', path: 'author', component: <Author /> },
-  ];
 
   const navElements = pages.map((entry) => {
     const isActive = entry.path === path;
@@ -23,10 +24,17 @@ function About() {
     );
   });
 
-  const pageElement = pages.find((entry) => entry.path === path)?.component;
+  const activePage = pages.find((entry) => entry.path === path);
+
+  const pageElement = activePage?.component;
+
+  const pageTitle = activePage?.title || 'About';
 
   return (
     <main className="About">
+      <Helmet>
+        <title>{pageTitle} • Stanboxd</title>
+      </Helmet>
       <div className="About-content">
         <nav className="About-nav">{navElements}</nav>
         {pageElement}
